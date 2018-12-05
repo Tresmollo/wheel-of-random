@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <!-- Page Content -->
+  <div id="content" [ngClass]="{'sidebar-active': !toggle}" [ngStyle]="{'background-color': backgroundColor}">
+    <app-wheel [spinMulti]="spinMulti"></app-wheel>
+  </div>
+
+  <!-- Sidebar -->
+  <nav  id="sidebar" [ngClass]="{'closed': toggle}">
+    <div class="sidebar-control" (click)="toggle = !toggle"><fa name="cog"></fa></div>
+    <app-sidebar 
+      (backgroundUpdated)="onBackgroundUpdated($event)"
+      (spinMultiUpdated)="onSpinMultiUpdated($event)"></app-sidebar>
+  </nav>
+  
+</div>

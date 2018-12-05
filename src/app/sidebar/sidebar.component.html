@@ -1,0 +1,60 @@
+<div class="sidebar-inner">
+  <div class="list-group list-group-flush">
+    <div class="list-group-item">
+      <button class="btn btn-success" (click)="onLoadConfig()">Load</button>
+      <button class="btn btn-success" (click)="onSaveConfig()">Save</button>
+    </div>
+    <div class="list-group-item">
+      <div class="col-auto">
+        <label class="sr-only" for="colorbg">Background Color</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Background</div>
+          </div>
+          <input type="color" class="form-control" id="colorbg"
+          [(ngModel)]="backgroundColor"
+          (ngModelChange)="onBackgroundUpdate()">
+        </div>
+      </div>
+    </div>
+    <div class="list-group-item">
+      <div class="col-auto">
+        <label class="sr-only" for="spin-multi">Spin Length</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Spin Length</div>
+          </div>
+          <input type="range" min="1" max="10" range="1" class="form-control custom-range size-range" id="spin-multi"
+          [(ngModel)]="spinMulti"
+          (ngModelChange)="onSpinMultiUpdate()">
+        </div>
+      </div>
+    </div>
+    <div class="list-group-item">
+      <div class="col-auto">
+        <label class="sr-only" for="slice-lock">Slice Lock</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Slice Lock</div>
+          </div>
+          <input type="checkbox" class="form-control" id="slice-lock"
+          [(ngModel)]="sliceLock">
+        </div>
+      </div>
+    </div>
+    <div class="list-group-item">
+      <div class="col-auto">
+        <button class="btn btn-success btn-block" (click)="onAddNewSlice()">Add a new slice <fa name="plus"></fa></button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="row"> -->
+  <!-- </div> -->
+
+
+  <div class="flex-scroll">
+    <app-slices></app-slices>
+  </div>
+</div>

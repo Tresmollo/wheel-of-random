@@ -1,0 +1,38 @@
+  <div class="col-auto">
+    <label class="sr-only" for="label">Label</label>
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Label</div>
+      </div>
+      <input type="text" class="form-control" id="label" placeholder="Label" name="value" #FocusInput
+        [(ngModel)]="slice.label"
+        (ngModelChange)="onSliceUpdate()">
+    </div>
+  </div>
+  <div class="col-auto">
+    <label class="sr-only" for="color">Color</label>
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Color</div>
+      </div>
+      <input type="color" class="form-control" id="color"
+        [(ngModel)]="slice.color"
+        (ngModelChange)="onSliceUpdate()">
+    </div>
+  </div>
+  <!-- <div class="col-auto">
+    <label class="sr-only" for="size">Size</label>
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Size</div>
+      </div>
+      <input type="range" min="1" max="10" range="1" class="form-control custom-range size-range" id="size"
+        [(ngModel)]="slice.size"
+        (ngModelChange)="onSliceUpdate()">
+    </div>
+  </div> -->
+  <div class="col-auto">
+    <div class="input-group mb2">
+      <button class="btn btn-outline-danger btn-block btn-sm" (click)="onSliceDelete()">Remove slice <fa name="trash"></fa></button>
+    </div>
+  </div>
